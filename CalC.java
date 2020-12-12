@@ -7,8 +7,11 @@ public class CalC extends Frame {
 	Button log, fact, power, root, pi, exp, percent, divide, multiply, subtract, plus, equal, clear, decimal;
 	Button zero, one, two, three, four, five, six, seven, eight, nine;
 	public CalC(){
-		this.setTitle("Calculator");
-		
+		this.setTitle("Calculator");		
+		this.setSize(400,400);
+		this.setPreferredSize(getSize());
+		this.setFont(new Font("Serif",Font.BOLD,22));;
+
 		GridBagLayout layout = new GridBagLayout();
 		GridBagConstraints gbc = new GridBagConstraints();
 		this.setLayout(layout);
@@ -21,11 +24,15 @@ public class CalC extends Frame {
 		gbc.gridx = 0;
 		gbc.gridy = 0;
 		gbc.gridwidth = 4;
-		gbc.ipady = 20;
-		gbc.ipadx = 10;
+		gbc.ipady = 10;
+		gbc.ipadx = 5;
 		tf = new TextField();
+//		tf.setEditable(false);
+		tf.setBackground(new Color(230,253,253));
+		tf.setForeground(new Color(0,0,80));
+		tf.setFont(new Font("Serif",Font.BOLD,40));
 		this.add(tf,gbc);
-		
+	
 		//First Row
 		gbc.gridwidth = 1;
 		gbc.fill = GridBagConstraints.BOTH;
@@ -162,10 +169,53 @@ public class CalC extends Frame {
 		gbc.gridy = 6;
 		equal = new Button("=");
 		this.add(equal,gbc);
+		
+		this.setForeground(Color.BLUE);
+		this.setBackground(Color.WHITE);
 
+		log.setBackground(Color.WHITE);
+		log.setForeground(new Color(255,204,0));
+		fact.setBackground(Color.WHITE);
+		fact.setForeground(new Color(255,204,0));
+		power.setBackground(Color.WHITE);
+		power.setForeground(new Color(255,204,0));
+		root.setBackground(Color.WHITE);
+		root.setForeground(new Color(255,204,0));
+		pi.setBackground(Color.WHITE);
+		pi.setForeground(new Color(255,204,0));
+		exp.setBackground(Color.WHITE);
+		exp.setForeground(new Color(255,204,0));
+		percent.setBackground(Color.WHITE);
+		percent.setForeground(new Color(255,204,0));
+		divide.setBackground(Color.WHITE);
+		divide.setForeground(new Color(255,204,0));
+		plus.setBackground(Color.WHITE);
+		plus.setForeground(new Color(255,204,0));
+		subtract.setBackground(Color.WHITE);
+		subtract.setForeground(new Color(255,204,0));
+		subtract.setFont(new Font("Serif", Font.BOLD, 30));
+		multiply.setBackground(Color.WHITE);
+		multiply.setForeground(new Color(255,204,0));
+
+		zero.setBackground(Color.WHITE);
+		one.setBackground(Color.WHITE);
+		two.setBackground(Color.WHITE);
+		three.setBackground(Color.WHITE);
+		four.setBackground(Color.WHITE);
+		five.setBackground(Color.WHITE);
+		six.setBackground(Color.WHITE);
+		seven.setBackground(Color.WHITE);
+		eight.setBackground(Color.WHITE);
+		nine.setBackground(Color.WHITE);
+
+		decimal.setBackground(Color.WHITE);
+		equal.setBackground(new Color(255,204,0));
+		equal.setForeground(Color.BLACK);
+		equal.setFont(new Font("Serif",Font.BOLD,30));
+		
+		clear.setBackground(Color.WHITE);
+		clear.setForeground(new Color(255,0,0));
 				
-		this.setSize(400,400);
-		this.setPreferredSize(getSize());
 		this.setVisible(true);
 
 		addWindowListener(new WindowAdapter()  {  
